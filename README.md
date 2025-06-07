@@ -2,6 +2,8 @@
 
 ```shell
 $ sudo pacman -S vcpkg
+$ git clone https://github.com/microsoft/vcpkg $VCPKG_ROOT
+$ update-vcpkg
 ```
 
 ```
@@ -30,6 +32,17 @@ Alternatively, you can pass the following to CMake when configuring:
 Check package content with `pacman -Ql vcpkg`.
 
 You can use `update-vcpkg` - defined in `.bashrc` for updating the git repository.
+
+### Example Project
+
+```shell
+mkdir helloworld && cd helloworld
+vcpkg new --application
+vcpkg add port fmt
+cmake --preset=default
+cmake --build build/
+./build/HelloWorld
+```
 
 ### Links
 
